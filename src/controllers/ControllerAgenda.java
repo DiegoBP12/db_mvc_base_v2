@@ -123,7 +123,8 @@ public class ControllerAgenda {
      * Método para ver el siguiente registro de la tabla contactos
      */
     private void jbtn_siguiente_actionPerformed() {
-        System.out.println("Action del boton jbtn_siguiente");
+        modelAgenda.moverSiguienteRegistro();
+        obtener_Datos();
         //invocar al metodo moverSiguienteRegistro
         //mostrar nombre en la vista
         //mostar email en la vista
