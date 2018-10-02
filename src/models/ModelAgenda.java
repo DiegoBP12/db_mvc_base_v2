@@ -69,6 +69,14 @@ public class ModelAgenda {
      * 3.- obtener el valor del email de rs y guardarlo en la variable email
      */
     public void moverPrimerRegistro(){
+        try {
+            rs.first();
+            nombre = rs.getString("nombre");
+            email = rs.getString("email");
+        }
+        catch(Exception err){
+            JOptionPane.showMessageDialog(null,"Es el primer registro"+err.getMessage()); 
+        }
         System.out.print("Programa accion moverPrimerRegistro");
     }
     
@@ -79,6 +87,13 @@ public class ModelAgenda {
      * 3.- obtener el valor del email de rs y guardarlo en la variable email
      */
     public void moverSiguienteRegistro(){
+        try{
+            rs.next();
+            nombre = rs.getString("nombre");
+            email = rs.getString("email");
+        }catch(Exception err){
+            JOptionPane.showMessageDialog(null,"Error s1"+err.getMessage()); 
+        }
         System.out.print("Programa accion moverSiguienteRegistro");
     }
     
@@ -89,6 +104,13 @@ public class ModelAgenda {
      * 3.- obtener el valor del email de rs y guardarlo en la variable email
      */
     public void moverAnteriorRegistro(){
+        try{
+            rs.previous();
+            nombre = rs.getString("nombre");
+            email = rs.getString("email");
+        }catch(Exception err){
+            JOptionPane.showMessageDialog(null,"Error s1"+err.getMessage()); 
+        }
         System.out.print("Programa accion moverAnteriorRegistro");
     }
     
@@ -99,6 +121,13 @@ public class ModelAgenda {
      * 3.- obtener el valor del email de rs y guardarlo en la variable email
      */
     public void moverUltimoRegistro(){
+        try{
+            rs.last();
+            nombre = rs.getString("nombre");
+            email = rs.getString("email");
+        }catch(Exception err){
+            JOptionPane.showMessageDialog(null,"Es el utlimo registro"+err.getMessage()); 
+        }
         System.out.print("Programa accion moverUltimoRegistro");
     }
 }
