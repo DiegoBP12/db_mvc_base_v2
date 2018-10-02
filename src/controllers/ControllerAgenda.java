@@ -90,7 +90,8 @@ public class ControllerAgenda {
      * Método para ver el primer registro de la tabla contactos
      */
     private void jbtn_primero_actionPerformed() {
-        System.out.println("Action del boton jbtn_primero");
+        modelAgenda.moverPrimerRegistro();
+        obtener_Datos();
         //invocar al metodo moverPrimerRegistro
         //mostrar nombre en la vista
         //mostar email en la vista

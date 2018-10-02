@@ -77,7 +77,7 @@ public class ModelAgenda {
         catch(Exception err){
             JOptionPane.showMessageDialog(null,"Es el primer registro"+err.getMessage()); 
         }
-        System.out.print("Programa accion moverPrimerRegistro");
+        
     }
     
     /**
@@ -94,7 +94,7 @@ public class ModelAgenda {
         }catch(Exception err){
             JOptionPane.showMessageDialog(null,"Error s1"+err.getMessage()); 
         }
-        System.out.print("Programa accion moverSiguienteRegistro");
+        
     }
     
     /**
@@ -111,7 +111,6 @@ public class ModelAgenda {
         }catch(Exception err){
             JOptionPane.showMessageDialog(null,"Error s1"+err.getMessage()); 
         }
-        System.out.print("Programa accion moverAnteriorRegistro");
     }
     
     /**
@@ -128,6 +127,5 @@ public class ModelAgenda {
         }catch(Exception err){
             JOptionPane.showMessageDialog(null,"Es el utlimo registro"+err.getMessage()); 
         }
-        System.out.print("Programa accion moverUltimoRegistro");
     }
 }
