@@ -82,6 +82,10 @@ public class ControllerAgenda {
         viewAgenda.jbtn_ultimo.addActionListener(actionListener);
     }
 
+    private void obtener_Datos(){
+        viewAgenda.jtf_nombre.setText(modelAgenda.getNombre());
+        viewAgenda.jtf_email.setText(modelAgenda.getEmail());
+    }
     /**
      * Método para ver el primer registro de la tabla contactos
      */
