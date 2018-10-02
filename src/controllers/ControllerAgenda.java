@@ -101,7 +101,8 @@ public class ControllerAgenda {
      * Método para ver el registro anterior de la tabla contactos
      */
     private void jbtn_anterior_actionPerformed() {
-        System.out.println("Action del boton jbtn_anterior");
+        modelAgenda.moverAnteriorRegistro();
+        obtener_Datos();
         //invocar al metodo moverAnteriorRegistro
         //mostrar nombre en la vista
         //mostar email en la vista
