@@ -75,7 +75,7 @@ public class ModelAgenda {
             email = rs.getString("email");
         }
         catch(Exception err){
-            JOptionPane.showMessageDialog(null,"Es el primer registro"+err.getMessage()); 
+            JOptionPane.showMessageDialog(null,"Error 002"+err.getMessage()); 
         }
         
     }
@@ -92,7 +92,7 @@ public class ModelAgenda {
             nombre = rs.getString("nombre");
             email = rs.getString("email");
         }catch(Exception err){
-            JOptionPane.showMessageDialog(null,"Error s1"+err.getMessage()); 
+            JOptionPane.showMessageDialog(null,"Es el ultimo registro"+err.getMessage()); 
         }
         
     }
@@ -109,7 +109,7 @@ public class ModelAgenda {
             nombre = rs.getString("nombre");
             email = rs.getString("email");
         }catch(Exception err){
-            JOptionPane.showMessageDialog(null,"Error s1"+err.getMessage()); 
+            JOptionPane.showMessageDialog(null,"Es el primer registro"+err.getMessage()); 
         }
     }
     
@@ -125,7 +125,7 @@ public class ModelAgenda {
             nombre = rs.getString("nombre");
             email = rs.getString("email");
         }catch(Exception err){
-            JOptionPane.showMessageDialog(null,"Es el utlimo registro"+err.getMessage()); 
+            JOptionPane.showMessageDialog(null,"Error 003"+err.getMessage()); 
         }
     }
 }
