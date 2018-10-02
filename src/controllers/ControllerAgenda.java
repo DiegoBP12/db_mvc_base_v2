@@ -112,7 +112,8 @@ public class ControllerAgenda {
      * Método para ver el último registro de la tabla contactos
      */
     private void jbtn_ultimo_actionPerformed() {
-        System.out.println("Action del boton jbtn_ultimo");
+        modelAgenda.moverUltimoRegistro();
+        obtener_Datos();
         //invocar al metodo moverUltimoRegistro
         //mostrar nombre en la vista
         //mostar email en la vista
