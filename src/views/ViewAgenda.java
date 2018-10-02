@@ -40,16 +40,22 @@ public class ViewAgenda extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jl_nombre.setFont(new java.awt.Font("NSimSun", 0, 14)); // NOI18N
         jl_nombre.setText("Nombre");
 
+        jl_email.setFont(new java.awt.Font("NSimSun", 0, 14)); // NOI18N
         jl_email.setText("Email");
 
+        jbtn_primero.setFont(new java.awt.Font("NSimSun", 0, 12)); // NOI18N
         jbtn_primero.setText("|<");
 
+        jbtn_anterior.setFont(new java.awt.Font("NSimSun", 0, 12)); // NOI18N
         jbtn_anterior.setText("<<");
 
+        jbtn_siguiente.setFont(new java.awt.Font("NSimSun", 0, 12)); // NOI18N
         jbtn_siguiente.setText(">>");
 
+        jbtn_ultimo.setFont(new java.awt.Font("NSimSun", 0, 12)); // NOI18N
         jbtn_ultimo.setText(">|");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -61,11 +67,11 @@ public class ViewAgenda extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jbtn_primero)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jbtn_anterior)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(22, 22, 22)
                         .addComponent(jbtn_siguiente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jbtn_ultimo))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -75,7 +81,7 @@ public class ViewAgenda extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jtf_email, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
