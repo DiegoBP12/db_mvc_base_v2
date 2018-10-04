@@ -35,6 +35,12 @@ public class ControllerAgenda {
             } else if (e.getSource() == viewAgenda.jbtn_ultimo) {
                 jbtn_ultimo_actionPerformed();
             }
+            else if (e.getSource() == viewAgenda.jb_nuevo){
+                jbtn_nuevo_actionPerformed();
+            }
+            else if (e.getSource() == viewAgenda.jb_insertar){
+                jbtn_insertar_actionPerformed();
+            }
 
         }
 
@@ -80,12 +86,42 @@ public class ControllerAgenda {
         viewAgenda.jbtn_anterior.addActionListener(actionListener);
         viewAgenda.jbtn_siguiente.addActionListener(actionListener);
         viewAgenda.jbtn_ultimo.addActionListener(actionListener);
+        viewAgenda.jb_nuevo.addActionListener(actionListener);
+        viewAgenda.jb_insertar.addActionListener(actionListener);
     }
 
+    /**
+     * Método que obtiene los valores de los JTextField nombre y email y los manda al modelo.
+     */
     private void obtener_Datos(){
+        modelAgenda.setNombre(viewAgenda.jtf_nombre.getText());
+        modelAgenda.setEmail(viewAgenda.jtf_email.getText());
+    }
+    
+    /**
+     * Método que muestra los valores de las variables nombre y email del modelo a la vista.
+     */
+    private void mostrar_Datos(){
         viewAgenda.jtf_nombre.setText(modelAgenda.getNombre());
         viewAgenda.jtf_email.setText(modelAgenda.getEmail());
     }
+    
+    /**
+     * Método que modifica la propiedad editable a True de los JTextField nombre y email.
+     */
+    private void editable(){
+        viewAgenda.jtf_nombre.setEditable(true);
+        viewAgenda.jtf_email.setEditable(true);
+    }
+    
+    /**
+     * Método que modifica la propiedad editable a False de los JTextField nombre y email.
+     */
+    private void editableF(){
+        viewAgenda.jtf_nombre.setEditable(false);
+        viewAgenda.jtf_email.setEditable(false);
+    }
+    
     /**
      * Método para ver el primer registro de la tabla contactos
      */
@@ -129,4 +165,27 @@ public class ControllerAgenda {
         //mostrar nombre en la vista
         //mostar email en la vista
     }
+    
+    /**
+     * Método que limpia los JTextField nombre y email, manda a llamar al método editable.
+     */
+    private void jbtn_nuevo_actionPerformed(){
+        viewAgenda.jtf_nombre.setText("");
+        viewAgenda.jtf_email.setText("");
+        editable();
+    }
+    
+    /**
+     * Método que manda los valores de los JTextField nombre y email y  manda a llamar al método insertarRegistro del modelo. 
+     */
+    
+    private void jbtn_insertar_actionPerformed(){
+        obtener_Datos();
+        modelAgenda.insertarRegistro();
+        mostrar_Datos();
+        editableF();
+        mostrar_Datos();
+        
+    }
+    
 }
