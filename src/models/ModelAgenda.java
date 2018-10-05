@@ -24,7 +24,7 @@ public class ModelAgenda {
     
     private String nombre;
     private String email;
-    private String id;
+    private int id;
 
     public String getNombre() {
         return nombre;
@@ -55,7 +55,7 @@ public class ModelAgenda {
             st = conexion.createStatement();
             rs = st.executeQuery("SELECT * FROM contactos;");
             rs.next();
-            id = rs.getString("id_contacto");
+            id = rs.getInt("id_contacto");
             nombre = rs.getString("nombre");
             email = rs.getString("email");
         } catch (SQLException err) {
@@ -158,8 +158,7 @@ public class ModelAgenda {
      */
     public void guardarRegistro(){
         try{
-            String sql = "UPDATE contactos set id = '"+ id + "', nombre ='" + nombre + "', email = '" + email + "' where id = '" + id + "';";
-            System.out.println(sql);
+            String sql = "UPDATE contactos SET nombre ='" + nombre + "', email = '" + email + "' where id_contacto = '" + id + "';";
             st.executeUpdate(sql);
             JOptionPane.showMessageDialog(null, "Se ha actualizado correctamente");
             rs = st.executeQuery("SELECT * FROM contactos;");
