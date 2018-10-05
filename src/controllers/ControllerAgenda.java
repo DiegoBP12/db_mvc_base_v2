@@ -127,7 +127,7 @@ public class ControllerAgenda {
      */
     private void jbtn_primero_actionPerformed() {
         modelAgenda.moverPrimerRegistro();
-        obtener_Datos();
+        mostrar_Datos();
         //invocar al metodo moverPrimerRegistro
         //mostrar nombre en la vista
         //mostar email en la vista
@@ -138,7 +138,7 @@ public class ControllerAgenda {
      */
     private void jbtn_anterior_actionPerformed() {
         modelAgenda.moverAnteriorRegistro();
-        obtener_Datos();
+        mostrar_Datos();
         //invocar al metodo moverAnteriorRegistro
         //mostrar nombre en la vista
         //mostar email en la vista
@@ -149,7 +149,7 @@ public class ControllerAgenda {
      */
     private void jbtn_ultimo_actionPerformed() {
         modelAgenda.moverUltimoRegistro();
-        obtener_Datos();
+        mostrar_Datos();
         //invocar al metodo moverUltimoRegistro
         //mostrar nombre en la vista
         //mostar email en la vista
@@ -160,7 +160,7 @@ public class ControllerAgenda {
      */
     private void jbtn_siguiente_actionPerformed() {
         modelAgenda.moverSiguienteRegistro();
-        obtener_Datos();
+        mostrar_Datos();
         //invocar al metodo moverSiguienteRegistro
         //mostrar nombre en la vista
         //mostar email en la vista
@@ -182,9 +182,9 @@ public class ControllerAgenda {
     private void jbtn_insertar_actionPerformed(){
         obtener_Datos();
         modelAgenda.insertarRegistro();
-        mostrar_Datos();
         editableF();
         mostrar_Datos();
+        
         
     }
     

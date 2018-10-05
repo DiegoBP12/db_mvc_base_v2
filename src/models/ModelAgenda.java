@@ -140,10 +140,9 @@ public class ModelAgenda {
         try{
             String sql = "INSERT INTO contactos(nombre,email)" + "VALUES ('"+ nombre +"','"+ email +"');";
             st.executeUpdate(sql);
-            rs=st.executeQuery("SELECT * FROM contactos");             
-            rs.first();
-            nombre = rs.getString("nombre");
-            email = rs.getString("email");
+            JOptionPane.showMessageDialog(null, "Se ha insertado correctamente");
+            rs = st.executeQuery("SELECT * FROM contactos;");
+            moverPrimerRegistro();
         }catch(SQLException err){
             
             JOptionPane.showMessageDialog(null, "Error ModelAgenda Inserción: " + err.getMessage());
