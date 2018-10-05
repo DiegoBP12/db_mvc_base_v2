@@ -165,7 +165,31 @@ public class ModelAgenda {
             moverPrimerRegistro();
         }catch(SQLException err){
             
-            JOptionPane.showMessageDialog(null, "Error ModelAgenda Actualización: " + err.getMessage());
+            JOptionPane.showMessageDialog(null, "Error ModelAgenda Actualizacion: " + err.getMessage());
         }
     }
+    
+    /**
+     * Método que realiza lo siguiente: 
+     * 1.- Pregunta si la acción elegida es la correcta
+     * 2.- Elimina los datos seleccionados en caso de ser correcta la acción.
+     */
+    
+    public void eliminarRegistro(){
+        int confirmar = JOptionPane.showConfirmDialog(null, "¿Desea eiminar el registro?");
+        if (JOptionPane.OK_OPTION== confirmar){
+        try{
+            String sql = "DELETE  FROM contactos WHERE nombre = '" + nombre + "';";
+            System.out.println(sql);
+            st.executeUpdate(sql);
+            JOptionPane.showMessageDialog(null, "Se ha eliminado correctamente");
+            rs = st.executeQuery("SELECT * FROM contactos;");
+            moverPrimerRegistro();
+        }catch(SQLException err){
+            
+            JOptionPane.showMessageDialog(null, "Error ModelAgenda Eliminar: " + err.getMessage());
+        }
+    }
+   }
+    
 }

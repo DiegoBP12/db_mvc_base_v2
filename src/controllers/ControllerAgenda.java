@@ -42,6 +42,8 @@ public class ControllerAgenda {
                 jbtn_modificar_actionPerformed();
             } else if (e.getSource() == viewAgenda.jb_guardar){
                 jbtn_guardar_actionPerformed();
+            } else if (e.getSource() == viewAgenda.jb_eliminar){
+                jbtn_eliminar_actionPerformed();
             }
 
         }
@@ -92,6 +94,7 @@ public class ControllerAgenda {
         viewAgenda.jb_insertar.addActionListener(actionListener);
         viewAgenda.jb_modificar.addActionListener(actionListener);
         viewAgenda.jb_guardar.addActionListener(actionListener);
+        viewAgenda.jb_eliminar.addActionListener(actionListener);
     }
 
     /**
@@ -198,12 +201,21 @@ public class ControllerAgenda {
     }
     
     /**
-     * Método que manda los valores de los JTextField nombre y email y  manda a llamar al método actualizarRegistro del modelo. 
+     * Método que manda los valores de los JTextField nombre y email, manda a llamar al método actualizarRegistro del modelo. 
      */
     private void jbtn_guardar_actionPerformed(){
         obtener_Datos();
         modelAgenda.guardarRegistro();
         editableF();
+        mostrar_Datos();
+    }
+    
+    /**
+     * Método que manda los valores de los JTextField nombre y email, manda a llamar al método eliminarRegistro del modelo. 
+     */
+    private void jbtn_eliminar_actionPerformed(){
+        obtener_Datos();
+        modelAgenda.eliminarRegistro();
         mostrar_Datos();
     }
 }
