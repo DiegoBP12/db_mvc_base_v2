@@ -22,9 +22,9 @@ public class ModelAgenda {
     private Statement st;
     private ResultSet rs;
     
-    private String query;
     private String nombre;
     private String email;
+    private String id;
 
     public String getNombre() {
         return nombre;
@@ -55,6 +55,7 @@ public class ModelAgenda {
             st = conexion.createStatement();
             rs = st.executeQuery("SELECT * FROM contactos;");
             rs.next();
+            id = rs.getString("id_contacto");
             nombre = rs.getString("nombre");
             email = rs.getString("email");
         } catch (SQLException err) {
@@ -76,7 +77,7 @@ public class ModelAgenda {
             email = rs.getString("email");
         }
         catch(Exception err){
-            JOptionPane.showMessageDialog(null,"Error 002"+err.getMessage()); 
+            JOptionPane.showMessageDialog(null,"Error ModelAgenda 002 "+err.getMessage()); 
         }
         
     }
@@ -93,7 +94,7 @@ public class ModelAgenda {
             nombre = rs.getString("nombre");
             email = rs.getString("email");
         }catch(Exception err){
-            JOptionPane.showMessageDialog(null,"Es el ultimo registro"+err.getMessage()); 
+            JOptionPane.showMessageDialog(null,"Es el último registro: " + err.getMessage()); 
         }
         
     }
@@ -110,7 +111,7 @@ public class ModelAgenda {
             nombre = rs.getString("nombre");
             email = rs.getString("email");
         }catch(Exception err){
-            JOptionPane.showMessageDialog(null,"Es el primer registro"+err.getMessage()); 
+            JOptionPane.showMessageDialog(null,"Es el primer registro: " + err.getMessage()); 
         }
     }
     
@@ -126,12 +127,12 @@ public class ModelAgenda {
             nombre = rs.getString("nombre");
             email = rs.getString("email");
         }catch(Exception err){
-            JOptionPane.showMessageDialog(null,"Error 003"+err.getMessage()); 
+            JOptionPane.showMessageDialog(null,"Error  ModelAgenda 003: "+err.getMessage()); 
         }
     }
     
     /**
-     * Método que realiza lo siguient:
+     * Método que realiza lo siguiente:
      * 1.- Inserta en la tabla un nuevo registro con los valores de las variables nombre y email.
      * 2.- Ejecuta una consulta de datos.
      * 3.- Manda el valor del primer registro obtenido de la consulta.
@@ -146,6 +147,26 @@ public class ModelAgenda {
         }catch(SQLException err){
             
             JOptionPane.showMessageDialog(null, "Error ModelAgenda Inserción: " + err.getMessage());
+        }
+    }
+    
+    /**
+     * Método que realiza lo siguiente:
+     * 1.- Actualiza la información con el query.
+     * 2.- Manda un mensaje de que se actualizo correctamente
+     * 3.- Actualiza los datos mandando al primer registro.
+     */
+    public void guardarRegistro(){
+        try{
+            String sql = "UPDATE contactos set id = '"+ id + "', nombre ='" + nombre + "', email = '" + email + "' where id = '" + id + "';";
+            System.out.println(sql);
+            st.executeUpdate(sql);
+            JOptionPane.showMessageDialog(null, "Se ha actualizado correctamente");
+            rs = st.executeQuery("SELECT * FROM contactos;");
+            moverPrimerRegistro();
+        }catch(SQLException err){
+            
+            JOptionPane.showMessageDialog(null, "Error ModelAgenda Actualización: " + err.getMessage());
         }
     }
 }

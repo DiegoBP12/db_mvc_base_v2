@@ -34,12 +34,14 @@ public class ControllerAgenda {
                 jbtn_siguiente_actionPerformed();
             } else if (e.getSource() == viewAgenda.jbtn_ultimo) {
                 jbtn_ultimo_actionPerformed();
-            }
-            else if (e.getSource() == viewAgenda.jb_nuevo){
+            } else if (e.getSource() == viewAgenda.jb_nuevo){
                 jbtn_nuevo_actionPerformed();
-            }
-            else if (e.getSource() == viewAgenda.jb_insertar){
+            } else if (e.getSource() == viewAgenda.jb_insertar){
                 jbtn_insertar_actionPerformed();
+            } else if (e.getSource() == viewAgenda.jb_modificar){
+                jbtn_modificar_actionPerformed();
+            } else if (e.getSource() == viewAgenda.jb_guardar){
+                jbtn_guardar_actionPerformed();
             }
 
         }
@@ -88,6 +90,8 @@ public class ControllerAgenda {
         viewAgenda.jbtn_ultimo.addActionListener(actionListener);
         viewAgenda.jb_nuevo.addActionListener(actionListener);
         viewAgenda.jb_insertar.addActionListener(actionListener);
+        viewAgenda.jb_modificar.addActionListener(actionListener);
+        viewAgenda.jb_guardar.addActionListener(actionListener);
     }
 
     /**
@@ -184,8 +188,22 @@ public class ControllerAgenda {
         modelAgenda.insertarRegistro();
         editableF();
         mostrar_Datos();
-        
-        
     }
     
+    /**
+     * Método que habilita los JTextField nombre y email para ser editables.
+     */
+    private void jbtn_modificar_actionPerformed(){
+        editable();
+    }
+    
+    /**
+     * Método que manda los valores de los JTextField nombre y email y  manda a llamar al método actualizarRegistro del modelo. 
+     */
+    private void jbtn_guardar_actionPerformed(){
+        obtener_Datos();
+        modelAgenda.guardarRegistro();
+        editableF();
+        mostrar_Datos();
+    }
 }
